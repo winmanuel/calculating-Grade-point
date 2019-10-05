@@ -1,0 +1,37 @@
+class Subject:
+
+    def __init__(self, max_size=11):
+        self.items = [None] * max_size
+        self.count = 0
+
+    def size(self):
+        return self.count
+
+    def push(self, course, credit=int, grade=int):
+        self.items[self.count] = course, credit, grade
+        self.count += 1
+
+    # def push(self, course, credit=0, grade=0):
+    #     self.items.append(course)
+    #     self.items.append(credit)
+    #     self.items.append(grade)
+
+    def pop(self):
+        course = self.items[self.count-1]
+        self.items[self.count-1] = None
+        self.count -= 1
+        return course
+
+    def display(self):
+        print(self.items)
+
+
+if __name__ == "__main__":
+    student_list = Subject(10)
+
+for elements in range(0, 10):
+  courses = str(input("what course do u take: ")).split()
+  student_list.push(courses)
+
+# print(student_list.pop())
+student_list.display()
